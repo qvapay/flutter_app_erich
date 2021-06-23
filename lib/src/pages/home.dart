@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:qvapay/src/pages/transaction/transfer.dart';
+import 'package:qvapay/src/snippets/receive_button.dart';
+import 'package:qvapay/src/snippets/send_button.dart';
+import 'package:qvapay/src/snippets/transaction.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -12,7 +15,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // Whole APP Background Color
+      backgroundColor: Color(0xFF17191E),
+
       // Bottom Navigation
+      /*
       bottomNavigationBar: Row(
         children: [
           buildNavBarItem(Icons.home, 0),
@@ -22,6 +29,16 @@ class _HomePageState extends State<HomePage> {
           buildNavBarItem(Icons.person, 4),
         ],
       ),
+      */
+
+      // Bottom Buttons
+      bottomNavigationBar: Container(
+        padding: const EdgeInsets.all(20),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [sendButton(), receiveButton()],
+        ),
+      ),
 
       // Body Stack
       body: Stack(
@@ -30,16 +47,16 @@ class _HomePageState extends State<HomePage> {
         children: [
           Column(
             children: [
-
               // Top Bar
               Container(
-                height: 300,
+                height: 200,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                       colors: [Color(0XFF00B686), Color(0XFF00838F)]),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 20, right: 20.0, top: 42),
+                  padding:
+                      const EdgeInsets.only(left: 20, right: 20.0, top: 42),
                   child: Column(
                     children: [
                       Row(
@@ -66,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                                           style: TextStyle(
                                             fontSize: 20,
                                             color: Colors.white,
-                                            fontWeight: FontWeight.w600,
+                                            fontWeight: FontWeight.w900,
                                           ))
                                     ]),
                               ),
@@ -107,16 +124,18 @@ class _HomePageState extends State<HomePage> {
               Expanded(
                 child: Container(
                   // General Padding
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  color: Colors.grey.shade100,
+                  padding: EdgeInsets.symmetric(horizontal: 0),
+                  // Background Color
+                  color: Color(0xFF17191E),
+                  // list View para Scroll Behavior
                   child: ListView(
-                    padding: EdgeInsets.only(top: 75),
+                    padding: EdgeInsets.only(top: 60, left: 15, right: 15),
                     children: [
                       Text(
-                        "Activity",
+                        "Servicios",
                         style: TextStyle(
                             fontSize: 18,
-                            fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.w400,
                             color: Colors.grey),
                       ),
                       SizedBox(
@@ -143,33 +162,78 @@ class _HomePageState extends State<HomePage> {
                         height: 15,
                       ),
                       Text(
-                        "Categories",
+                        "Transacciones",
                         style: TextStyle(
                             fontSize: 18,
-                            fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.w400,
                             color: Colors.grey),
                       ),
                       SizedBox(
                         height: 20,
                       ),
-                      buildCategoryCard(Icons.fastfood, "Food", 120, 20),
-                      buildCategoryCard(Icons.flash_on, "Utilities", 430, 17),
-                      buildCategoryCard(Icons.fastfood, "Food", 120, 20),
+                      transactionItem(
+                          context,
+                          Icons.fastfood,
+                          "Food",
+                          "Papa Johns",
+                          120.15,
+                          "Completed",
+                          "Algo acá",
+                          "pwiuvbwpieuvbwevpubwev"),
+                      SizedBox(
+                        height: 7.5,
+                      ),
+                      transactionItem(
+                          context,
+                          Icons.fastfood,
+                          "Food",
+                          "Papa Johns",
+                          120.15,
+                          "Completed",
+                          "Algo acá",
+                          "wqevoyqbevpwieuvbwweip"),
+                      SizedBox(
+                        height: 7.5,
+                      ),
+                      transactionItem(
+                          context,
+                          Icons.fastfood,
+                          "Food",
+                          "Papa Johns",
+                          120.15,
+                          "Completed",
+                          "Algo acá",
+                          "wqevoyqbevpwieuvbwweip"),
+                      SizedBox(
+                        height: 7.5,
+                      ),
+                      transactionItem(
+                          context,
+                          Icons.fastfood,
+                          "Food",
+                          "Papa Johns",
+                          120.15,
+                          "Completed",
+                          "Algo acá",
+                          "wqevoyqbevpwieuvbwweip"),
+                      SizedBox(
+                        height: 7.5,
+                      ),
                     ],
                   ),
                 ),
               )
             ],
           ),
-          
+
           // Balance Card
           Positioned(
-            top: 120,
+            top: 100,
             // How to Horizontal Center a Positioned Widget
             child: Container(
-              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+              padding: EdgeInsets.symmetric(vertical: 25, horizontal: 25),
               width: MediaQuery.of(context).size.width * 0.85,
-              height: 160,
+              height: 140,
               decoration: BoxDecoration(
                   color: Colors.white,
                   boxShadow: [
@@ -180,13 +244,13 @@ class _HomePageState extends State<HomePage> {
                       offset: Offset(0, 10),
                     ),
                   ],
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    bottomLeft: Radius.circular(50),
-                  )),
+                  borderRadius: BorderRadius.all(Radius.circular(15))),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Row(
+                    children: [Text('PAQUETA')],
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -251,26 +315,6 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ],
                   ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    "You spent \$ 1,494 this month",
-                    style: TextStyle(
-                      fontSize: 13,
-                      fontStyle: FontStyle.italic,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 3,
-                  ),
-                  Text(
-                    "Let's see the cost statistics for this period",
-                    style: TextStyle(
-                      fontSize: 13,
-                      fontStyle: FontStyle.italic,
-                    ),
-                  ),
                 ],
               ),
             ),
@@ -281,6 +325,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   // Gesture detector for Bottom Navigation
+  /*
   GestureDetector buildNavBarItem(IconData icon, int index) {
     return GestureDetector(
       onTap: () {
@@ -307,8 +352,9 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+  */
 
-  // ??
+  // Cards with transactons list
   Container buildCategoryCard(
       IconData icon, String title, int amount, int percentage) {
     return Container(
@@ -389,6 +435,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  // Services Buttons
   GestureDetector buildActivityButton(
       IconData icon, String title, Color backgroundColor, Color iconColor) {
     return GestureDetector(

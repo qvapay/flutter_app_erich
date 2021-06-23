@@ -1,4 +1,4 @@
-#Wed Jun 23 00:02:55 CDT 2021
+#Wed Jun 23 17:07:33 CDT 2021
 base.0=/Users/erich/flutter/qvapay/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
