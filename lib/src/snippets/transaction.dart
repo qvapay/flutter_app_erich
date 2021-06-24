@@ -14,7 +14,6 @@ Widget transactionItem(
     String status,
     String description,
     String uuid) {
-  
   return GestureDetector(
     onTap: () {
       print('clic TX $uuid');
@@ -28,10 +27,7 @@ Widget transactionItem(
           borderRadius: BorderRadius.circular(12),
           //color: Colors.white,
         ),
-        child: Row(mainAxisAlignment: MainAxisAlignment.start,
-        
-        children: [
-          
+        child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
           // Service / Person / payment Photo
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -85,10 +81,9 @@ Widget transactionItem(
                 Text(
                   subconcept,
                   style: TextStyle(
-                    fontSize: 12.5,
-                    fontWeight: FontWeight.w300,
-                    color: Colors.grey
-                  ),
+                      fontSize: 12.5,
+                      fontWeight: FontWeight.w300,
+                      color: Colors.grey),
                 ),
               ],
             ),
@@ -102,18 +97,16 @@ Widget transactionItem(
               Text(
                 "+ " + "$amount" + " \$",
                 style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0XFF94a0ff)
-                ),
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.greenAccent),
               ),
               Text(
                 "15/5/21",
                 style: TextStyle(
-                  fontSize: 12.5,
-                  fontWeight: FontWeight.w200,
-                  color: Colors.grey
-                ),
+                    fontSize: 12.5,
+                    fontWeight: FontWeight.w200,
+                    color: Colors.grey),
               ),
             ],
           )
