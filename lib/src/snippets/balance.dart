@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qvapay/theme.dart';
 
 Widget balanceCard(BuildContext context) {
   return Container(
@@ -22,6 +23,7 @@ Widget balanceCard(BuildContext context) {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
+              
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -39,7 +41,7 @@ Widget balanceCard(BuildContext context) {
                       ),
                       Icon(
                         Icons.arrow_upward,
-                        color: Color(0XFF00838F),
+                        color: ThemeColors.sentMoney,
                       )
                     ],
                   ),
@@ -55,7 +57,7 @@ Widget balanceCard(BuildContext context) {
                     children: [
                       Icon(
                         Icons.arrow_downward,
-                        color: Color(0XFF00838F),
+                        color: ThemeColors.receivedMoney,
                       ),
                       SizedBox(
                         width: 6,

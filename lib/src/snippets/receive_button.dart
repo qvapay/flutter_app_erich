@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:qvapay/theme.dart';
 
 Widget receiveButton(BuildContext context) {
   return GestureDetector(
@@ -16,7 +17,7 @@ Widget receiveButton(BuildContext context) {
                 bottom: 0,
                 left: 0, //give the values according to your requirement
                 child: FaIcon(FontAwesomeIcons.chevronCircleDown,
-                    color: Colors.blue, size: 12.0),
+                    color: ThemeColors.receivedMoney, size: 12.0),
               ),
             ],
           ),
