@@ -52,7 +52,7 @@ Widget transactionItem(
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(6.0),
                   child: Image.network(
-                    "https://images.pexels.com/photos/2167673/pexels-photo-2167673.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+                    "https://qvapay.com/storage/profiles/xGnoyrlZMy10Ta5hCQGvEtj6aqJK3Fa1rueU1lPv.jpg",
                     height: 50.0,
                     width: 50.0,
                     fit: BoxFit.cover,
@@ -99,7 +99,7 @@ Widget transactionItem(
                 style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: Colors.greenAccent),
+                    color: Colors.green),
               ),
               Text(
                 "15/5/21",

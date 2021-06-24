@@ -2,16 +2,15 @@ import 'package:flutter/material.dart';
 
 Widget balanceCard(BuildContext context) {
   return Container(
-    //padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
     padding: EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0, bottom: 10.0),
-    width: MediaQuery.of(context).size.width * 0.85,
+    width: MediaQuery.of(context).size.width * 0.75,
     height: 140,
     decoration: BoxDecoration(
         gradient:
             LinearGradient(colors: [Color(0XFF5e72e4), Color(0XFF5e72e4)]),
         boxShadow: [
           BoxShadow(
-            color: Colors.white.withOpacity(.25),
+            color: Colors.white.withOpacity(.15),
             blurRadius: 8,
             spreadRadius: 3,
             offset: Offset(0, 0),

@@ -44,8 +44,16 @@ class _HomePageState extends State<HomePage> {
                   padding: EdgeInsets.symmetric(horizontal: 0),
                   // list View para Scroll Behavior
                   child: ListView(
-                    padding: EdgeInsets.only(top: 60, left: 15, right: 15),
+                    padding: EdgeInsets.only(top: 30, left: 15, right: 15),
                     children: [
+                      // Balance Card
+                      Container(
+                        padding: EdgeInsets.only(left: 20.0, right: 20.0),
+                        child: balanceCard(context)
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -158,15 +166,60 @@ class _HomePageState extends State<HomePage> {
                       SizedBox(
                         height: 7.5,
                       ),
+                      transactionItem(
+                          context,
+                          Icons.fastfood,
+                          "Food",
+                          "Papa Johns",
+                          120.15,
+                          "Completed",
+                          "Algo acá",
+                          "wqevoyqbevpwieuvbwweip"),
+                      SizedBox(
+                        height: 7.5,
+                      ),
+                      transactionItem(
+                          context,
+                          Icons.fastfood,
+                          "Food",
+                          "Papa Johns",
+                          120.15,
+                          "Completed",
+                          "Algo acá",
+                          "wqevoyqbevpwieuvbwweip"),
+                      SizedBox(
+                        height: 7.5,
+                      ),
+                      transactionItem(
+                          context,
+                          Icons.fastfood,
+                          "Food",
+                          "Papa Johns",
+                          120.15,
+                          "Completed",
+                          "Algo acá",
+                          "wqevoyqbevpwieuvbwweip"),
+                      SizedBox(
+                        height: 7.5,
+                      ),
+                      transactionItem(
+                          context,
+                          Icons.fastfood,
+                          "Food",
+                          "Papa Johns",
+                          120.15,
+                          "Completed",
+                          "Algo acá",
+                          "wqevoyqbevpwieuvbwweip"),
+                      SizedBox(
+                        height: 7.5,
+                      ),
                     ],
                   ),
                 ),
               )
             ],
           ),
-
-          // Balance Card
-          Positioned(top: 100, child: balanceCard(context))
         ],
       ),
     );

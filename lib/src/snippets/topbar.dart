@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 Widget topbar = Container(
-  height: 200,
+  height: 100,
   child: Padding(
-    padding: const EdgeInsets.only(left: 20, right: 20.0, top: 42),
+    padding: const EdgeInsets.only(left: 15.0, right: 20.0, top: 42),
     child: Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -12,6 +12,7 @@ Widget topbar = Container(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            // Menú Icon
             Icon(
               Icons.menu,
               color: Colors.white,
@@ -25,7 +26,7 @@ Widget topbar = Container(
                       style: TextStyle(
                         fontSize: 16,
                         color: Colors.white38,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w400,
                       ),
                       children: [
                         TextSpan(
@@ -33,27 +34,27 @@ Widget topbar = Container(
                             style: TextStyle(
                               fontSize: 20,
                               color: Colors.white,
-                              fontWeight: FontWeight.w900,
+                              fontWeight: FontWeight.bold,
                             ))
                       ]),
                 ),
                 SizedBox(width: 10),
                 Container(
-                  width: 40.0,
-                  height: 40.0,
+                  width: 48.0,
+                  height: 48.0,
                   decoration: BoxDecoration(
                     color: Color(0XFF00B686),
                     boxShadow: [
                       BoxShadow(
-                          color: Colors.black.withOpacity(.1),
+                          color: Colors.black.withOpacity(.2),
                           blurRadius: 8,
                           spreadRadius: 3)
                     ],
                     border: Border.all(
-                      width: 1.5,
+                      width: 1.6,
                       color: Colors.white,
                     ),
-                    borderRadius: BorderRadius.circular(20.0),
+                    borderRadius: BorderRadius.circular(24.0),
                   ),
                   padding: EdgeInsets.all(0),
                   child: CircleAvatar(
