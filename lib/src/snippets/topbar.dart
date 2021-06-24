@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 Widget topbar = Container(
   height: 100,
@@ -13,10 +14,11 @@ Widget topbar = Container(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             // Menú Icon
-            Icon(
-              Icons.menu,
-              color: Colors.white,
-            ),
+            IconButton(
+                icon: FaIcon(FontAwesomeIcons.bars),
+                onPressed: () {
+                  print("Pressed");
+                }),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [

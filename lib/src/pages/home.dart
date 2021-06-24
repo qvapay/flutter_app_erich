@@ -178,42 +178,6 @@ class _HomePageState extends State<HomePage> {
                       SizedBox(
                         height: 7.5,
                       ),
-                      transactionItem(
-                          context,
-                          Icons.fastfood,
-                          "Food",
-                          "Papa Johns",
-                          120.15,
-                          "Completed",
-                          "Algo acá",
-                          "wqevoyqbevpwieuvbwweip"),
-                      SizedBox(
-                        height: 7.5,
-                      ),
-                      transactionItem(
-                          context,
-                          Icons.fastfood,
-                          "Food",
-                          "Papa Johns",
-                          120.15,
-                          "Completed",
-                          "Algo acá",
-                          "wqevoyqbevpwieuvbwweip"),
-                      SizedBox(
-                        height: 7.5,
-                      ),
-                      transactionItem(
-                          context,
-                          Icons.fastfood,
-                          "Food",
-                          "Papa Johns",
-                          120.15,
-                          "Completed",
-                          "Algo acá",
-                          "wqevoyqbevpwieuvbwweip"),
-                      SizedBox(
-                        height: 7.5,
-                      ),
                     ],
                   ),
                 ),
