@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qvapay/src/pages/transaction/transfer.dart';
+import 'package:qvapay/src/snippets/balance.dart';
 import 'package:qvapay/src/snippets/receive_button.dart';
 import 'package:qvapay/src/snippets/send_button.dart';
 import 'package:qvapay/src/snippets/transaction.dart';
@@ -10,26 +11,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _selectedItemIndex = 2;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // Whole APP Background Color
       backgroundColor: Color(0xFF17191E),
-
-      // Bottom Navigation
-      /*
-      bottomNavigationBar: Row(
-        children: [
-          buildNavBarItem(Icons.home, 0),
-          buildNavBarItem(Icons.card_giftcard, 1),
-          buildNavBarItem(Icons.camera, 2),
-          buildNavBarItem(Icons.pie_chart, 3),
-          buildNavBarItem(Icons.person, 4),
-        ],
-      ),
-      */
 
       // Bottom Buttons
       bottomNavigationBar: Container(
@@ -50,17 +36,16 @@ class _HomePageState extends State<HomePage> {
               // Top Bar
               Container(
                 height: 200,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      colors: [Color(0XFF00B686), Color(0XFF00838F)]),
-                ),
                 child: Padding(
                   padding:
                       const EdgeInsets.only(left: 20, right: 20.0, top: 42),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Icon(
                             Icons.menu,
@@ -108,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                                 padding: EdgeInsets.all(0),
                                 child: CircleAvatar(
                                   backgroundImage: NetworkImage(
-                                      "https://images.pexels.com/photos/2167673/pexels-photo-2167673.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"),
+                                      "https://qvapay.com/storage/profiles/xGnoyrlZMy10Ta5hCQGvEtj6aqJK3Fa1rueU1lPv.jpg"),
                                 ),
                               ),
                             ],
@@ -229,130 +214,12 @@ class _HomePageState extends State<HomePage> {
           // Balance Card
           Positioned(
             top: 100,
-            // How to Horizontal Center a Positioned Widget
-            child: Container(
-              padding: EdgeInsets.symmetric(vertical: 25, horizontal: 25),
-              width: MediaQuery.of(context).size.width * 0.85,
-              height: 140,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(.05),
-                      blurRadius: 8,
-                      spreadRadius: 3,
-                      offset: Offset(0, 10),
-                    ),
-                  ],
-                  borderRadius: BorderRadius.all(Radius.circular(15))),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [Text('PAQUETA')],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Text(
-                                "Income",
-                                style: TextStyle(
-                                    color: Colors.grey,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Icon(
-                                Icons.arrow_upward,
-                                color: Color(0XFF00838F),
-                              )
-                            ],
-                          ),
-                          Text(
-                            "\$2 170.90",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18.0,
-                                color: Colors.black87),
-                          )
-                        ],
-                      ),
-                      Container(width: 1, height: 50, color: Colors.grey),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Text(
-                                "Expenses",
-                                style: TextStyle(
-                                    color: Colors.grey,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Icon(
-                                Icons.arrow_downward,
-                                color: Color(0XFF00838F),
-                              )
-                            ],
-                          ),
-                          Text(
-                            "\$1 450.10",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18.0,
-                                color: Colors.black87),
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
+            child: balanceCard(context)
           )
         ],
       ),
     );
   }
-
-  // Gesture detector for Bottom Navigation
-  /*
-  GestureDetector buildNavBarItem(IconData icon, int index) {
-    return GestureDetector(
-      onTap: () {
-        setState(() {
-          _selectedItemIndex = index;
-        });
-      },
-      child: Container(
-        width: MediaQuery.of(context).size.width / 5,
-        height: 60,
-        decoration: index == _selectedItemIndex
-            ? BoxDecoration(
-                border:
-                    Border(bottom: BorderSide(width: 4, color: Colors.green)),
-                gradient: LinearGradient(colors: [
-                  Colors.green.withOpacity(0.3),
-                  Colors.green.withOpacity(0.016),
-                ], begin: Alignment.bottomCenter, end: Alignment.topCenter))
-            : BoxDecoration(),
-        child: Icon(
-          icon,
-          color: index == _selectedItemIndex ? Color(0XFF00B868) : Colors.grey,
-        ),
-      ),
-    );
-  }
-  */
 
   // Cards with transactons list
   Container buildCategoryCard(

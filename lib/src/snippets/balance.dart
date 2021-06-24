@@ -1,62 +1,87 @@
 import 'package:flutter/material.dart';
 
-/*
- * Card with this structure:
- * 
- * Container:
- * Row
- *  Column
- *    APP or user associated
- *  Column
- *    Name (Text)
- *    Surname (Text)
- *  Column
- *    AMOUNT (Text)
- *    Status (Text)
- */
-
-Widget balanceCard = Card(
-  margin: EdgeInsets.all(10.0),
-  elevation: 1.0,
-  shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(50.0))),
-  child: Container(
-      decoration: BoxDecoration(
-          gradient:
-              RadialGradient(colors: [Color(0xFF015FFF), Color(0xFF015FFF)])),
-      padding: EdgeInsets.all(5.0),
-      // color: Color(0xFF015FFF),
-      child: Column(
-        children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              IconButton(
-                icon: Icon(
-                  Icons.arrow_back,
-                  color: Colors.white,
-                ),
-                onPressed: () {},
-              ),
-              Text("Savings",
-                  style: TextStyle(color: Colors.white, fontSize: 20.0)),
-              IconButton(
-                icon: Icon(
-                  Icons.arrow_forward,
-                  color: Colors.white,
-                ),
-                onPressed: () {},
-              )
-            ],
+Widget balanceCard(BuildContext context) {
+  return Container(
+    //padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+    padding: EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0, bottom: 10.0),
+    width: MediaQuery.of(context).size.width * 0.85,
+    height: 140,
+    decoration: BoxDecoration(
+        gradient:
+            LinearGradient(colors: [Color(0XFF5e72e4), Color(0XFF5e72e4)]),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.white.withOpacity(.25),
+            blurRadius: 8,
+            spreadRadius: 3,
+            offset: Offset(0, 0),
           ),
-          Center(
-            child: Padding(
-              padding: EdgeInsets.all(5.0),
-              child: Text(r"$ " "95,940.00",
-                  style: TextStyle(color: Colors.white, fontSize: 24.0)),
-            ),
-          ),
-          SizedBox(height: 35.0),
         ],
-      )),
-);
+        borderRadius: BorderRadius.all(Radius.circular(15))),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Text(
+          '\$ 2315.15',
+          style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontSize: 45.00),
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Text(
+                      "\$2 170.90",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16.0,
+                          color: Colors.white),
+                    ),
+                    SizedBox(
+                      width: 6,
+                    ),
+                    Icon(
+                      Icons.arrow_upward,
+                      color: Color(0XFF00838F),
+                    )
+                  ],
+                ),
+              ],
+            ),
+            Container(width: 1, height: 50, color: Colors.grey),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Text(
+                      "\$1 450.10",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16.0,
+                          color: Colors.white),
+                    ),
+                    SizedBox(
+                      width: 6,
+                    ),
+                    Icon(
+                      Icons.arrow_downward,
+                      color: Color(0XFF00838F),
+                    )
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ),
+      ],
+    ),
+  );
+}

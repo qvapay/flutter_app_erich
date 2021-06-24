@@ -14,6 +14,7 @@ Widget transactionItem(
     String status,
     String description,
     String uuid) {
+  
   return GestureDetector(
     onTap: () {
       print('clic TX $uuid');
