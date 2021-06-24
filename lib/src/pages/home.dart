@@ -5,6 +5,7 @@ import 'package:qvapay/src/snippets/receive_button.dart';
 import 'package:qvapay/src/snippets/send_button.dart';
 import 'package:qvapay/src/snippets/topbar.dart';
 import 'package:qvapay/src/snippets/transaction.dart';
+import 'package:qvapay/theme.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -16,11 +17,15 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       // Whole APP Background Color
-      backgroundColor: Color(0xFF17191E),
+      backgroundColor: ThemeColors.dark1,
 
       // Bottom Buttons
       bottomNavigationBar: Container(
-        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.only(topLeft: Radius.circular(20.0), topRight: Radius.circular(20.0)),
+          color: ThemeColors.dark3,
+        ),
+        padding: const EdgeInsets.all(16),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [sendButton(context), receiveButton(context)],
@@ -48,9 +53,8 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       // Balance Card
                       Container(
-                        padding: EdgeInsets.only(left: 20.0, right: 20.0),
-                        child: balanceCard(context)
-                      ),
+                          padding: EdgeInsets.only(left: 20.0, right: 20.0),
+                          child: balanceCard(context)),
                       SizedBox(
                         height: 30,
                       ),
@@ -147,7 +151,7 @@ class _HomePageState extends State<HomePage> {
                           Icons.fastfood,
                           "Food",
                           "Papa Johns",
-                          120.15,
+                          -120.15,
                           "Completed",
                           "Algo acá",
                           "wqevoyqbevpwieuvbwweip"),
@@ -159,7 +163,7 @@ class _HomePageState extends State<HomePage> {
                           Icons.fastfood,
                           "Food",
                           "Papa Johns",
-                          120.15,
+                          -87,
                           "Completed",
                           "Algo acá",
                           "wqevoyqbevpwieuvbwweip"),

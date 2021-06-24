@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qvapay/src/pages/transaction/show.dart';
+import 'package:qvapay/theme.dart';
 /*
  * Transaction row
  */
@@ -14,6 +15,7 @@ Widget transactionItem(
     String status,
     String description,
     String uuid) {
+
   return GestureDetector(
     onTap: () {
       print('clic TX $uuid');
@@ -35,7 +37,7 @@ Widget transactionItem(
             children: [
               Container(
                 decoration: BoxDecoration(
-                  color: Color(0XFFFFFFFF),
+                  color: Colors.white,
                   boxShadow: [
                     BoxShadow(
                         color: Colors.white.withOpacity(.2),
@@ -99,7 +101,7 @@ Widget transactionItem(
                 style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: Colors.green),
+                    color: ThemeColors.receivedMoney),
               ),
               Text(
                 "15/5/21",
