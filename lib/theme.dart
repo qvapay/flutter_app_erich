@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 /*
  * #5e72e4
@@ -20,8 +21,9 @@ ThemeData themedata = ThemeData(
   accentColor: Color(0xFF4769b2),
 
   // Define the default font family.
-  fontFamily: 'Georgia',
+  fontFamily: 'Nunito',
 
+  // Google Fonts
   // Define the default TextTheme. Use this to specify the default
   // text styling for headlines, titles, bodies of text, and more.
   textTheme: TextTheme(
