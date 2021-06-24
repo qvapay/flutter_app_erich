@@ -7,7 +7,15 @@ Widget balanceCard(BuildContext context) {
     height: 140,
     decoration: BoxDecoration(
         gradient:
-            LinearGradient(colors: [Color(0XFF5e72e4), Color(0XFF5e72e4)]),
+            LinearGradient(
+              colors: [
+                Color(0XFF5e72e4),
+                Color(0XFF5e72e4)
+              ],
+              stops: [0.0, 0.7],
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+            ),
         boxShadow: [
           BoxShadow(
             color: Colors.white.withOpacity(.15),
