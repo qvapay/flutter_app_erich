@@ -106,7 +106,7 @@ Widget transactionItem(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                sign + " \$ " + amount.abs().toString(),
+                sign + amount.abs().toString() + " \$",
                 style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,

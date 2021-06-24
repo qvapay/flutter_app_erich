@@ -25,7 +25,9 @@ Widget receiveButton(BuildContext context) {
         Text(
           'Recibir',
           style: TextStyle(
-              fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white),
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+              color: Colors.white),
         )
       ],
     ),

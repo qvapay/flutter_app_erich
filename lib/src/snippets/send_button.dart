@@ -25,7 +25,9 @@ Widget sendButton(BuildContext context) {
         Text(
           'Enviar',
           style: TextStyle(
-              fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white),
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+              color: Colors.white),
         )
       ],
     ),

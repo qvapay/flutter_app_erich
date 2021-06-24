@@ -22,7 +22,8 @@ class _HomePageState extends State<HomePage> {
       // Bottom Buttons
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(topLeft: Radius.circular(20.0), topRight: Radius.circular(20.0)),
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20.0), topRight: Radius.circular(20.0)),
           color: ThemeColors.dark3,
         ),
         padding: const EdgeInsets.all(16),
@@ -125,9 +126,9 @@ class _HomePageState extends State<HomePage> {
                       transactionItem(
                           context,
                           Icons.fastfood,
-                          "Food",
-                          "Papa Johns",
-                          120.15,
+                          "Recarga del Exterior",
+                          "56897952366",
+                          -20.8,
                           "Completed",
                           "Algo acá",
                           "pwiuvbwpieuvbwevpubwev"),
@@ -137,8 +138,8 @@ class _HomePageState extends State<HomePage> {
                       transactionItem(
                           context,
                           Icons.fastfood,
-                          "Food",
-                          "Papa Johns",
+                          "Web Giveers",
+                          "Diseño e implementación",
                           120.15,
                           "Completed",
                           "Algo acá",
@@ -149,33 +150,9 @@ class _HomePageState extends State<HomePage> {
                       transactionItem(
                           context,
                           Icons.fastfood,
-                          "Food",
-                          "Papa Johns",
+                          "RM Envíos",
+                          "Combo de comida",
                           -120.15,
-                          "Completed",
-                          "Algo acá",
-                          "wqevoyqbevpwieuvbwweip"),
-                      SizedBox(
-                        height: 7.5,
-                      ),
-                      transactionItem(
-                          context,
-                          Icons.fastfood,
-                          "Food",
-                          "Papa Johns",
-                          -87,
-                          "Completed",
-                          "Algo acá",
-                          "wqevoyqbevpwieuvbwweip"),
-                      SizedBox(
-                        height: 7.5,
-                      ),
-                      transactionItem(
-                          context,
-                          Icons.fastfood,
-                          "Food",
-                          "Papa Johns",
-                          120.15,
                           "Completed",
                           "Algo acá",
                           "wqevoyqbevpwieuvbwweip"),

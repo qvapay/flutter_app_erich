@@ -10,14 +10,15 @@ Widget balanceCard(BuildContext context) {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
-          '\$ 2315.15',
+          '\$ 413.15',
           style: TextStyle(
               color: Colors.white,
+              
               fontWeight: FontWeight.bold,
               fontSize: 50.00),
         ),
         Container(
-          padding: EdgeInsets.only(left: 15.0, right: 15.0),
+          padding: EdgeInsets.only(left: 25.0, right: 25.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -27,7 +28,7 @@ Widget balanceCard(BuildContext context) {
                   Row(
                     children: [
                       Text(
-                        "\$2 170.90",
+                        "\$ 170.90",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 15.0,
@@ -60,7 +61,7 @@ Widget balanceCard(BuildContext context) {
                         width: 6,
                       ),
                       Text(
-                        "\$1 450.10",
+                        "\$ 450.10",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 15.0,

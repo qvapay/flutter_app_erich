@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 /*
  * #5e72e4
@@ -27,14 +26,14 @@ ThemeData themedata = ThemeData(
   // Define the default TextTheme. Use this to specify the default
   // text styling for headlines, titles, bodies of text, and more.
   textTheme: TextTheme(
-    headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-    headline2: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-    headline3: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-    headline4: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-    headline5: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-    headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
-    bodyText1: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
-    bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+    headline1: TextStyle(fontSize: 72.0),
+    headline2: TextStyle(fontSize: 72.0),
+    headline3: TextStyle(fontSize: 72.0),
+    headline4: TextStyle(fontSize: 72.0),
+    headline5: TextStyle(fontSize: 72.0),
+    headline6: TextStyle(fontSize: 36.0),
+    bodyText1: TextStyle(fontSize: 14.0),
+    bodyText2: TextStyle(fontSize: 14.0),
   ),
 );
 

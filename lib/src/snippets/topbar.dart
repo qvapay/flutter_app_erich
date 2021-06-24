@@ -32,7 +32,7 @@ Widget topbar = Container(
                       ),
                       children: [
                         TextSpan(
-                            text: "\$_Name!",
+                            text: "\Erich!",
                             style: TextStyle(
                               fontSize: 20,
                               color: Colors.white,
