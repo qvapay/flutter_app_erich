@@ -15,6 +15,15 @@ Widget transactionItem(
     String status,
     String description,
     String uuid) {
+  
+  
+  Color amountColor = ThemeColors.receivedMoney;
+  String sign = "+ ";
+
+  if (amount.isNegative) {
+    amountColor = ThemeColors.sentMoney;
+    sign = "- ";
+  }
 
   return GestureDetector(
     onTap: () {
@@ -97,11 +106,11 @@ Widget transactionItem(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "+ " + "$amount" + " \$",
+                sign + " \$ " + amount.abs().toString(),
                 style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: ThemeColors.receivedMoney),
+                    color: amountColor),
               ),
               Text(
                 "15/5/21",

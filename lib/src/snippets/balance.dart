@@ -1,34 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:qvapay/theme.dart';
 
 Widget balanceCard(BuildContext context) {
   return Container(
     padding: EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0, bottom: 10.0),
     width: MediaQuery.of(context).size.width * 0.75,
     height: 140,
-    decoration: BoxDecoration(
-        backgroundBlendMode: BlendMode.screen,
-        gradient: RadialGradient(
-          center: Alignment(0.9, 0.1),
-          radius: 10.0,
-          colors: [
-            ThemeColors.primaryColor,
-            ThemeColors.accentColor,
-          ],
-          stops: [
-            0,
-            1,
-          ],
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.white.withOpacity(.15),
-            blurRadius: 8,
-            spreadRadius: 3,
-            offset: Offset(0, 0),
-          ),
-        ],
-        borderRadius: BorderRadius.all(Radius.circular(15))),
     child: Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,

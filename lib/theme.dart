@@ -37,7 +37,7 @@ ThemeData themedata = ThemeData(
 );
 
 class ThemeColors {
-  static Color receivedMoney = Color(0xFF217245);
+  static Color receivedMoney = Color(0xFF37BE74);
   static Color receivedMoneyProcessing = Color(0xFF7A9F88);
   static Color receivedMoneyAccent = Color(0xFF004B1C);
   static Color sentMoney = Color(0xFFFA3A0F);
