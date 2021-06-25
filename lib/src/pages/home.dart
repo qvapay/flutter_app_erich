@@ -41,8 +41,9 @@ class _HomePageState extends State<HomePage> {
         children: [
           Column(
             children: [
+              
               // Top Bar
-              topbar,
+              topbar(context),
 
               // Horizontal Menu
               Expanded(
@@ -154,87 +155,6 @@ class _HomePageState extends State<HomePage> {
               )
             ],
           ),
-        ],
-      ),
-    );
-  }
-
-  // Cards with transactons list
-  Container buildCategoryCard(
-      IconData icon, String title, int amount, int percentage) {
-    return Container(
-      padding: EdgeInsets.all(15),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Colors.white,
-      ),
-      height: 85,
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  Icon(
-                    icon,
-                    color: Color(0xFF00B686),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    title,
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Text(
-                    "\$$amount",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    "($percentage%)",
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.grey),
-                  )
-                ],
-              )
-            ],
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          Stack(
-            children: [
-              Container(
-                height: 5,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(2),
-                    color: Colors.grey.shade300),
-              ),
-              Container(
-                height: 5,
-                width: 80,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(2),
-                    color: Color(0XFF00B686)),
-              ),
-            ],
-          )
         ],
       ),
     );
