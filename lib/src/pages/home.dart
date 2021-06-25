@@ -5,6 +5,7 @@ import 'package:qvapay/src/snippets/receive_button.dart';
 import 'package:qvapay/src/snippets/send_button.dart';
 import 'package:qvapay/src/snippets/topbar.dart';
 import 'package:qvapay/src/snippets/transaction.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:qvapay/theme.dart';
 
 class HomePage extends StatefulWidget {
@@ -69,13 +70,7 @@ class _HomePageState extends State<HomePage> {
                                 fontWeight: FontWeight.w400,
                                 color: Colors.white),
                           ),
-                          Text(
-                            "Ver más >",
-                            style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.blue),
-                          ),
+                          FaIcon(FontAwesomeIcons.plusCircle, size: 14.0),
                         ],
                       ),
                       SizedBox(
@@ -111,13 +106,7 @@ class _HomePageState extends State<HomePage> {
                                 fontWeight: FontWeight.w400,
                                 color: Colors.white),
                           ),
-                          Text(
-                            "Ver más >",
-                            style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.blue),
-                          ),
+                          FaIcon(FontAwesomeIcons.plusCircle, size: 14.0),
                         ],
                       ),
                       SizedBox(
