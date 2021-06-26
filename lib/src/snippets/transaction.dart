@@ -28,9 +28,12 @@ Widget transactionItem(
   return GestureDetector(
     onTap: () {
       print('clic TX $uuid');
+      /*
       final route =
           MaterialPageRoute(builder: (context) => TransactionDetails());
       Navigator.push(context, route);
+      */
+      Navigator.pushNamed(context, '/transactions');
     },
     child: Container(
         padding: EdgeInsets.all(6),

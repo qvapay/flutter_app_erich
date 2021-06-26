@@ -41,7 +41,6 @@ class _HomePageState extends State<HomePage> {
         children: [
           Column(
             children: [
-              
               // Top Bar
               topbar(context),
 
@@ -77,22 +76,46 @@ class _HomePageState extends State<HomePage> {
                       SizedBox(
                         height: 5,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          buildActivityButton(Icons.card_membership, "My Card",
-                              Colors.blue.withOpacity(0.2), Color(0XFF01579B)),
-                          buildActivityButton(
-                              Icons.transfer_within_a_station,
-                              "Transfer",
-                              Colors.cyanAccent.withOpacity(0.2),
-                              Color(0XFF0097A7)),
-                          buildActivityButton(
-                              Icons.pie_chart,
-                              "Statistics",
-                              Color(0XFFD7CCC8).withOpacity(0.4),
-                              Color(0XFF9499B7)),
-                        ],
+                      Container(
+                        margin: EdgeInsets.symmetric(vertical: 20.0),
+                        height: 100.0,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: <Widget>[
+                            Container(
+                              width: 160.0,
+                              color: Colors.red,
+                            ),
+                            Container(
+                              width: 10.0,
+                            ),
+                            Container(
+                              width: 160.0,
+                              color: Colors.blue,
+                            ),
+                            Container(
+                              width: 10.0,
+                            ),
+                            Container(
+                              width: 160.0,
+                              color: Colors.green,
+                            ),
+                            Container(
+                              width: 10.0,
+                            ),
+                            Container(
+                              width: 160.0,
+                              color: Colors.yellow,
+                            ),
+                            Container(
+                              width: 10.0,
+                            ),
+                            Container(
+                              width: 160.0,
+                              color: Colors.orange,
+                            ),
+                          ],
+                        ),
                       ),
                       SizedBox(
                         height: 15,
@@ -164,8 +187,8 @@ class _HomePageState extends State<HomePage> {
   GestureDetector buildActivityButton(
       IconData icon, String title, Color backgroundColor, Color iconColor) {
     return GestureDetector(
-      onTap: () => Navigator.of(context).push(
-          MaterialPageRoute(builder: (BuildContext context) => TransferPage())),
+      //onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => TransferPage())),
+      onTap: () => Navigator.pushNamed(context, '/services'),
       child: Container(
         margin: EdgeInsets.all(10),
         height: 90,
