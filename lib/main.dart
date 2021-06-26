@@ -10,8 +10,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'QvaPay',
-      routes: routes,
       theme: themedata,
+      routes: routes,
     );
   }
 }

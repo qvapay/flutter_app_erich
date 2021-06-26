@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:qvapay/src/pages/transaction/transfer.dart';
+import 'package:qvapay/theme.dart';
 import 'package:qvapay/src/snippets/balance.dart';
-import 'package:qvapay/src/snippets/receive_button.dart';
-import 'package:qvapay/src/snippets/send_button.dart';
+import 'package:qvapay/src/snippets/bottom_nav.dart';
 import 'package:qvapay/src/snippets/topbar.dart';
 import 'package:qvapay/src/snippets/transaction.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:qvapay/theme.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -21,18 +19,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: ThemeColors.dark1,
 
       // Bottom Buttons
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(20.0), topRight: Radius.circular(20.0)),
-          color: ThemeColors.dark3,
-        ),
-        padding: const EdgeInsets.all(16),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [sendButton(context), receiveButton(context)],
-        ),
-      ),
+      bottomNavigationBar: bottomNav(context),
 
       // Body Stack
       body: Stack(
@@ -44,11 +31,23 @@ class _HomePageState extends State<HomePage> {
               // Top Bar
               topbar(context),
 
-              // Horizontal Menu
+              // Body
               Expanded(
                 child: Container(
+                  /*
+                  decoration: BoxDecoration(
+                    gradient: RadialGradient(
+                      colors: [ThemeColors.accentColor, ThemeColors.dark1],
+                      center: Alignment(-1.6, -0.6),
+                      focal: Alignment(-0.9, -0.9),
+                      focalRadius: 9.0,
+                    ),
+                  ),
+                  */
+
                   // General Padding
                   padding: EdgeInsets.symmetric(horizontal: 0),
+
                   // list View para Scroll Behavior
                   child: ListView(
                     padding: EdgeInsets.only(top: 30, left: 15, right: 15),
@@ -57,9 +56,13 @@ class _HomePageState extends State<HomePage> {
                       Container(
                           padding: EdgeInsets.only(left: 20.0, right: 20.0),
                           child: balanceCard(context)),
+
+                      // Spacer
                       SizedBox(
                         height: 30,
                       ),
+
+                      // Services Header
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -70,12 +73,21 @@ class _HomePageState extends State<HomePage> {
                                 fontWeight: FontWeight.w400,
                                 color: Colors.white),
                           ),
-                          FaIcon(FontAwesomeIcons.plusCircle, size: 14.0),
+                          GestureDetector(
+                              onTap: () {
+                                Navigator.pushNamed(context, '/services');
+                              },
+                              child: FaIcon(FontAwesomeIcons.plusCircle,
+                                  size: 14.0)),
                         ],
                       ),
+
+                      // Spacer
                       SizedBox(
                         height: 5,
                       ),
+
+                      // Services List
                       Container(
                         margin: EdgeInsets.symmetric(vertical: 20.0),
                         height: 100.0,
@@ -117,9 +129,13 @@ class _HomePageState extends State<HomePage> {
                           ],
                         ),
                       ),
+
+                      // Spacer
                       SizedBox(
                         height: 15,
                       ),
+
+                      // Transaction Header
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -130,12 +146,21 @@ class _HomePageState extends State<HomePage> {
                                 fontWeight: FontWeight.w400,
                                 color: Colors.white),
                           ),
-                          FaIcon(FontAwesomeIcons.plusCircle, size: 14.0),
+                          GestureDetector(
+                              onTap: () {
+                                Navigator.pushNamed(context, '/transactions');
+                              },
+                              child: FaIcon(FontAwesomeIcons.plusCircle,
+                                  size: 14.0)),
                         ],
                       ),
+
+                      // Spacer
                       SizedBox(
                         height: 20,
                       ),
+
+                      // List of transactions
                       transactionItem(
                           context,
                           Icons.fastfood,
