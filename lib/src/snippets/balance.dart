@@ -12,6 +12,7 @@ Widget balanceCard(BuildContext context) {
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(10.0),
+          // https://blurha.sh/
           child: BlurHash(
             hash: "LsK,@7{JkWOsGHyWn7nhpHkWniWX",
             imageFit: BoxFit.cover,
