@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:qvapay/theme.dart';
 
 Widget topbar(BuildContext context) {
   return Container(
     height: 100,
+    color: ThemeColors.dark1,
     child: Padding(
       padding: const EdgeInsets.only(left: 15.0, right: 20.0, top: 42),
       child: Column(
@@ -62,13 +64,7 @@ Widget profileData(BuildContext context) {
           width: 48.0,
           height: 48.0,
           decoration: BoxDecoration(
-            color: Color(0XFF00B686),
-            boxShadow: [
-              BoxShadow(
-                  color: Colors.black.withOpacity(.2),
-                  blurRadius: 8,
-                  spreadRadius: 3)
-            ],
+            color: ThemeColors.prettyWhite,
             border: Border.all(
               width: 1.6,
               color: Colors.white,

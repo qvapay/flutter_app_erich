@@ -38,16 +38,19 @@ ThemeData themedata = ThemeData(
 );
 
 class ThemeColors {
+
   static Color receivedMoney = Color(0xFF37BE74);
   static Color receivedMoneyProcessing = Color(0xFF7A9F88);
   static Color receivedMoneyAccent = Color(0xFF004B1C);
   static Color sentMoney = Color(0xFFFA3A0F);
   static Color sentMoneyProcessing = Color(0xFFF96E46);
-  static Color prettyWhite = Color(0xFFf3f3f3);
+  static Color prettyWhite = Color(0xFFFFFFFF);
   static Color primaryColor = Color(0xFF5E72E4);
   static Color accentColor = Color(0xFF4769B2);
-  static Color dark1 = Color(0xFF17191E);
-  static Color dark2 = Color(0x8817191E);
+  
+  static Color dark1 = Color(0xFF121212);     // Dark Grey
+  static Color dark2 = Color(0xFF222222);     // Secondary Dark Color
   static Color dark3 = Color(0xFF293036);
   static Color dark4 = Color(0xFF232428);
+  
 }

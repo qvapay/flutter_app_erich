@@ -8,21 +8,10 @@ Widget bottomNav(BuildContext context) {
   return Container(
     decoration: BoxDecoration(
       borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(20.0),
-          topRight: Radius.circular(20.0),
+        topLeft: Radius.circular(20.0),
+        topRight: Radius.circular(20.0),
       ),
-      /*
-      boxShadow: [
-        new BoxShadow( 
-          color: ThemeColors.dark3,
-          // offset, the X,Y coordinates to offset the shadow
-          offset: new Offset(0.0, -5.0), 
-          // blurRadius, the higher the number the more smeared look 
-          blurRadius: 5.0,
-          spreadRadius: 1.0)
-      ],
-      */
-      color: ThemeColors.dark3,
+      color: ThemeColors.dark2,
     ),
     padding: const EdgeInsets.all(16),
     child: Row(

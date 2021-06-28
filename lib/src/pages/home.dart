@@ -4,6 +4,7 @@ import 'package:qvapay/src/snippets/balance.dart';
 import 'package:qvapay/src/snippets/bottom_nav.dart';
 import 'package:qvapay/src/snippets/topbar.dart';
 import 'package:qvapay/src/snippets/transaction.dart';
+import 'package:qvapay/src/pages/services/horizontal_list.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomePage extends StatefulWidget {
@@ -23,6 +24,7 @@ class _HomePageState extends State<HomePage> {
 
       // Body Stack
       body: Stack(
+        
         // Center Stack
         alignment: Alignment.center,
         children: [
@@ -34,17 +36,6 @@ class _HomePageState extends State<HomePage> {
               // Body
               Expanded(
                 child: Container(
-                  /*
-                  decoration: BoxDecoration(
-                    gradient: RadialGradient(
-                      colors: [ThemeColors.accentColor, ThemeColors.dark1],
-                      center: Alignment(-1.6, -0.6),
-                      focal: Alignment(-0.9, -0.9),
-                      focalRadius: 9.0,
-                    ),
-                  ),
-                  */
-
                   // General Padding
                   padding: EdgeInsets.symmetric(horizontal: 0),
 
@@ -88,47 +79,7 @@ class _HomePageState extends State<HomePage> {
                       ),
 
                       // Services List
-                      Container(
-                        margin: EdgeInsets.symmetric(vertical: 20.0),
-                        height: 100.0,
-                        child: ListView(
-                          scrollDirection: Axis.horizontal,
-                          children: <Widget>[
-                            Container(
-                              width: 160.0,
-                              color: Colors.red,
-                            ),
-                            Container(
-                              width: 10.0,
-                            ),
-                            Container(
-                              width: 160.0,
-                              color: Colors.blue,
-                            ),
-                            Container(
-                              width: 10.0,
-                            ),
-                            Container(
-                              width: 160.0,
-                              color: Colors.green,
-                            ),
-                            Container(
-                              width: 10.0,
-                            ),
-                            Container(
-                              width: 160.0,
-                              color: Colors.yellow,
-                            ),
-                            Container(
-                              width: 10.0,
-                            ),
-                            Container(
-                              width: 160.0,
-                              color: Colors.orange,
-                            ),
-                          ],
-                        ),
-                      ),
+                      servicesList(context),
 
                       // Spacer
                       SizedBox(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:qvapay/src/pages/transaction/show.dart';
 import 'package:qvapay/theme.dart';
 /*
  * Transaction row
