@@ -30,23 +30,24 @@ class _HomePageState extends State<HomePage> {
         children: [
           Column(
             children: [
+              
               // Top Bar
               topbar(context),
 
               // Body
               Expanded(
                 child: Container(
+                  
                   // General Padding
                   padding: EdgeInsets.symmetric(horizontal: 0),
 
                   // list View para Scroll Behavior
                   child: ListView(
-                    padding: EdgeInsets.only(top: 30, left: 15, right: 15),
+                    padding: EdgeInsets.only(top: 30, left: 25, right: 25),
                     children: [
+                      
                       // Balance Card
-                      Container(
-                          padding: EdgeInsets.only(left: 20.0, right: 20.0),
-                          child: balanceCard(context)),
+                      balanceCard(context),
 
                       // Spacer
                       SizedBox(

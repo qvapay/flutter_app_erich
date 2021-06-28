@@ -1,77 +1,95 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:qvapay/theme.dart';
 
 Widget balanceCard(BuildContext context) {
   return Container(
-    padding: EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0, bottom: 10.0),
-    width: MediaQuery.of(context).size.width * 0.75,
     height: 140,
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.center,
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(10.0),
+    ),
+    child: Stack(
       children: [
-        Text(
-          '\$ 413.15',
-          style: TextStyle(
-              color: Colors.white,
-              
-              fontWeight: FontWeight.bold,
-              fontSize: 50.00),
+        ClipRRect(
+          borderRadius: BorderRadius.circular(10.0),
+          child: BlurHash(
+            hash: "LsK,@7{JkWOsGHyWn7nhpHkWniWX",
+            imageFit: BoxFit.cover,
+            curve: Curves.bounceInOut,
+          ),
         ),
         Container(
-          padding: EdgeInsets.only(left: 25.0, right: 25.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          padding: EdgeInsets.symmetric(vertical: 14.0, horizontal: 25.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Text(
-                        "\$ 170.90",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15.0,
-                            color: Colors.white),
-                      ),
-                      SizedBox(
-                        width: 6,
-                      ),
-                      Icon(
-                        Icons.arrow_upward,
-                        color: ThemeColors.sentMoney,
-                      )
-                    ],
-                  ),
-                ],
+              Text(
+                '\$ 413.15',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 50.00),
               ),
+              Container(
+                padding: EdgeInsets.only(left: 25.0, right: 25.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              "\$ 170.90",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15.0,
+                                  color: Colors.white),
+                            ),
+                            SizedBox(
+                              width: 6,
+                            ),
+                            Icon(
+                              Icons.arrow_upward,
+                              color: ThemeColors.sentMoney,
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
 
-              //Container(width: 1, height: 50, color: Colors.grey),
+                    //Container(width: 1, height: 50, color: Colors.grey),
 
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.arrow_downward,
-                        color: ThemeColors.receivedMoney,
-                      ),
-                      SizedBox(
-                        width: 6,
-                      ),
-                      Text(
-                        "\$ 450.10",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15.0,
-                            color: Colors.white),
-                      ),
-                    ],
-                  ),
-                ],
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.arrow_downward,
+                              color: ThemeColors.receivedMoney,
+                            ),
+                            SizedBox(
+                              width: 6,
+                            ),
+                            Text(
+                              "\$ 450.10",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15.0,
+                                  color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

@@ -6,6 +6,7 @@ Widget serviceCard(BuildContext context,
     double price = 0.00,
     String title = "",
     List<String> colors}) {
+  
   return Container(
     decoration: BoxDecoration(
       color: ThemeColors.accentColor,
