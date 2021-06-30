@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_blurhash/flutter_blurhash.dart';
+import 'package:simple_shadow/simple_shadow.dart';
 
 Widget serviceCard(BuildContext context,
     {String logoUrl = "https://qvapay.com/android-chrome-512x512.png/",
@@ -42,32 +43,18 @@ Widget serviceCard(BuildContext context,
 
             // logo Row
             Container(
-              child: Stack(
-                children: [
-                  Opacity(
-                    opacity: 0.2,
-                    child: Image(
-                        color: Colors.black,
-                        width: 70.0,
-                        height: 70.0,
-                        image: NetworkImage(logoUrl)),
-                  ),
-                  ClipRect(
-                      child: BackdropFilter(
-                          filter: ImageFilter.blur(sigmaX: 0.0, sigmaY: 5.0),
-                          child: Image(
-                              color: Colors.black,
-                              width: 70.0,
-                              height: 70.0,
-                              image: NetworkImage(logoUrl)))),
-                  Image(
-                      width: 70.0, height: 70.0, image: NetworkImage(logoUrl)),
-                ],
+              child: SimpleShadow(
+                child: Image(
+                  width: 70.0,
+                  height: 70.0,
+                  image: NetworkImage(logoUrl),
+                  semanticLabel: title,
+                ),
+                opacity: 0.25, // Default: 0.5
+                color: Colors.black, // Default: Black
+                offset: Offset(3, 3), // Default: Offset(2, 2)
+                sigma: 7, // Default: 2
               ),
-              /*
-              child: Image(
-                  width: 70.0, height: 70.0, image: NetworkImage(logoUrl)),
-                  */
             ),
 
             // Name and Price Data Row

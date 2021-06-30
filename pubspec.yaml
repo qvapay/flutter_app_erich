@@ -30,6 +30,7 @@ dependencies:
   cupertino_icons: ^1.0.3
   font_awesome_flutter: ^9.1.0
   flutter_blurhash: ^0.6.0
+  simple_shadow: ^0.2.0
 
 dev_dependencies:
   flutter_test:
