@@ -15,7 +15,6 @@ Widget transactionItem(
     String description,
     String uuid) {
   
-  
   Color amountColor = ThemeColors.receivedMoney;
   String sign = "+ ";
 

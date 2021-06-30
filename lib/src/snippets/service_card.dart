@@ -1,6 +1,7 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_blurhash/flutter_blurhash.dart';
-import 'package:qvapay/theme.dart';
 
 Widget serviceCard(BuildContext context,
     {String logoUrl = "https://qvapay.com/android-chrome-512x512.png/",
@@ -19,7 +20,7 @@ Widget serviceCard(BuildContext context,
           borderRadius: BorderRadius.circular(10.0),
           // https://blurha.sh/
           child: BlurHash(
-            hash: "LsK,@7{JkWOsGHyWn7nhpHkWniWX",
+            hash: "LJ0DeHfqgLenglfTf~eng2g2g3f6",
             imageFit: BoxFit.cover,
             curve: Curves.bounceInOut,
           ),
@@ -40,10 +41,33 @@ Widget serviceCard(BuildContext context,
             ),
 
             // logo Row
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [Image(image: NetworkImage(logoUrl))],
+            Container(
+              child: Stack(
+                children: [
+                  Opacity(
+                    opacity: 0.2,
+                    child: Image(
+                        color: Colors.black,
+                        width: 70.0,
+                        height: 70.0,
+                        image: NetworkImage(logoUrl)),
+                  ),
+                  ClipRect(
+                      child: BackdropFilter(
+                          filter: ImageFilter.blur(sigmaX: 0.0, sigmaY: 5.0),
+                          child: Image(
+                              color: Colors.black,
+                              width: 70.0,
+                              height: 70.0,
+                              image: NetworkImage(logoUrl)))),
+                  Image(
+                      width: 70.0, height: 70.0, image: NetworkImage(logoUrl)),
+                ],
+              ),
+              /*
+              child: Image(
+                  width: 70.0, height: 70.0, image: NetworkImage(logoUrl)),
+                  */
             ),
 
             // Name and Price Data Row
