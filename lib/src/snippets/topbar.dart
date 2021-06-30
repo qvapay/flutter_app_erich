@@ -61,8 +61,8 @@ Widget profileData(BuildContext context) {
         ),
         SizedBox(width: 10),
         Container(
-          width: 48.0,
-          height: 48.0,
+          width: 36.0,
+          height: 36.0,
           decoration: BoxDecoration(
             color: ThemeColors.prettyWhite,
             border: Border.all(

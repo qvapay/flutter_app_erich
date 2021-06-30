@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:qvapay/theme.dart';
 
 Widget balanceCard(BuildContext context) {
@@ -11,14 +10,17 @@ Widget balanceCard(BuildContext context) {
     child: Stack(
       children: [
         ClipRRect(
-          borderRadius: BorderRadius.circular(10.0),
-          // https://blurha.sh/
-          child: BlurHash(
-            hash: "LsK,@7{JkWOsGHyWn7nhpHkWniWX",
-            imageFit: BoxFit.cover,
-            curve: Curves.bounceInOut,
-          ),
-        ),
+            borderRadius: BorderRadius.circular(10.0),
+            child: Container(
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                      colors: [
+                    ThemeColors.moonPurple1,
+                    ThemeColors.moonPurple2
+                  ])),
+            )),
         Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.0),

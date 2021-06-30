@@ -48,6 +48,10 @@ class ThemeColors {
   static Color primaryColor = Color(0xFF5E72E4);
   static Color accentColor = Color(0xFF4769B2);
   
+  static Color moonPurple1 = Color(0xFF4e54c8);
+  static Color moonPurple2 = Color(0xFF8f94fb);
+
+  
   static Color dark1 = Color(0xFF121212);     // Dark Grey
   static Color dark2 = Color(0xFF222222);     // Secondary Dark Color
   static Color dark3 = Color(0xFF293036);
