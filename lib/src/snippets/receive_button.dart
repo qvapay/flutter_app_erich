@@ -11,13 +11,16 @@ Widget receiveButton(BuildContext context) {
       children: [
         Container(
           child: Stack(
+            clipBehavior: Clip.none,
             children: <Widget>[
               FaIcon(FontAwesomeIcons.wallet),
               Positioned(
-                bottom: 0,
-                left: 0, //give the values according to your requirement
+                bottom: -2,
+                left: -3, //give the values according to your requirement
                 child: FaIcon(FontAwesomeIcons.chevronCircleDown,
-                    color: ThemeColors.receivedMoney, size: 12.0),
+                    semanticLabel: 'Receive Money',
+                    color: ThemeColors.receivedMoney,
+                    size: 12.0),
               ),
             ],
           ),
@@ -26,9 +29,7 @@ Widget receiveButton(BuildContext context) {
         Text(
           'Recibir',
           style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w600,
-              color: Colors.white),
+              fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white),
         )
       ],
     ),

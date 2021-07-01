@@ -25,6 +25,7 @@ class _HomePageState extends State<HomePage> {
       // Body Stack
       body: Column(
         children: [
+
           // Top Bar
           topbar(context),
 
@@ -32,11 +33,13 @@ class _HomePageState extends State<HomePage> {
           Expanded(
 
             child: Container(
+              
               // General Padding
               padding: EdgeInsets.symmetric(horizontal: 0),
 
               // list View para Scroll Behavior
               child: ListView(
+                
                 padding: EdgeInsets.only(top: 30, left: 20, right: 20),
                 children: [
                   
