@@ -2,10 +2,11 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_blurhash/flutter_blurhash.dart';
+import 'package:qvapay/theme.dart';
 import 'package:simple_shadow/simple_shadow.dart';
 
 Widget serviceCard(BuildContext context,
-    {String logoUrl = "https://qvapay.com/android-chrome-512x512.png/",
+    {String logoUrl = ThemeColors.logoUrl,
     double price = 0.00,
     String title = "",
     List<String> colors}) {

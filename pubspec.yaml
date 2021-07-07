@@ -31,6 +31,7 @@ dependencies:
   font_awesome_flutter: ^9.1.0
   flutter_blurhash: ^0.6.0
   simple_shadow: ^0.2.0
+  qr_flutter: ^4.0.0
 
 dev_dependencies:
   flutter_test:

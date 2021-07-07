@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:qvapay/theme.dart';
 
-Widget topbar(BuildContext context) {
+Widget topbar(BuildContext context, {String name = "", String avatar = ""}) {
   return Container(
     height: 100,
     color: ThemeColors.dark1,
@@ -23,7 +23,7 @@ Widget topbar(BuildContext context) {
                     print("Pressed");
                   }),
               // Profile details
-              profileData(context),
+              profileData(context, name: name, avatar: avatar),
             ],
           ),
         ],
@@ -33,7 +33,9 @@ Widget topbar(BuildContext context) {
 }
 
 // Hi, Name and Profile picture
-Widget profileData(BuildContext context) {
+Widget profileData(BuildContext context,
+    {String name = "", String avatar = ""}) {
+
   return GestureDetector(
     onTap: () {
       Navigator.pushNamed(context, '/settings');
@@ -51,7 +53,7 @@ Widget profileData(BuildContext context) {
               ),
               children: [
                 TextSpan(
-                    text: "\Erich!",
+                    text: name,
                     style: TextStyle(
                       fontSize: 20,
                       color: Colors.white,
@@ -69,12 +71,12 @@ Widget profileData(BuildContext context) {
               width: 1.6,
               color: Colors.white,
             ),
-            borderRadius: BorderRadius.circular(24.0),
+            borderRadius: BorderRadius.circular(18.0),
           ),
           padding: EdgeInsets.all(0),
           child: CircleAvatar(
-            backgroundImage: NetworkImage(
-                "https://qvapay.com/storage/profiles/xGnoyrlZMy10Ta5hCQGvEtj6aqJK3Fa1rueU1lPv.jpg"),
+            backgroundColor: ThemeColors.dark2,
+            backgroundImage: NetworkImage(avatar),
           ),
         ),
       ],

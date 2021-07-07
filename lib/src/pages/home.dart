@@ -25,24 +25,22 @@ class _HomePageState extends State<HomePage> {
       // Body Stack
       body: Column(
         children: [
-
           // Top Bar
-          topbar(context),
+          topbar(context,
+              name: "Erich",
+              avatar:
+                  "https://qvapay.com/storage/profiles/xGnoyrlZMy10Ta5hCQGvEtj6aqJK3Fa1rueU1lPv.jpg"),
 
           // Body
           Expanded(
-
             child: Container(
-              
               // General Padding
               padding: EdgeInsets.symmetric(horizontal: 0),
 
               // list View para Scroll Behavior
               child: ListView(
-                
                 padding: EdgeInsets.only(top: 30, left: 20, right: 20),
                 children: [
-                  
                   // Balance Card
                   balanceCard(context),
 
@@ -105,8 +103,7 @@ class _HomePageState extends State<HomePage> {
                   ),
 
                   // Latest 3 transactions
-                  latestTransactions(context), 
-                  
+                  latestTransactions(context),
                 ],
               ),
             ),
