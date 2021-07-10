@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:qvapay/theme.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 Widget topbar(BuildContext context, {String name = "", String avatar = ""}) {
   return Container(
@@ -76,7 +77,7 @@ Widget profileData(BuildContext context,
           padding: EdgeInsets.all(0),
           child: CircleAvatar(
             backgroundColor: ThemeColors.dark2,
-            backgroundImage: NetworkImage(avatar),
+            backgroundImage: CachedNetworkImageProvider(avatar),
           ),
         ),
       ],

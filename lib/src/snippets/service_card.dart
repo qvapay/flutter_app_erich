@@ -1,8 +1,8 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:qvapay/theme.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:simple_shadow/simple_shadow.dart';
 
 Widget serviceCard(BuildContext context,
@@ -48,7 +48,8 @@ Widget serviceCard(BuildContext context,
                 child: Image(
                   width: 70.0,
                   height: 70.0,
-                  image: NetworkImage(logoUrl),
+                  //image: NetworkImage(logoUrl),
+                  image: CachedNetworkImageProvider(logoUrl),
                   semanticLabel: title,
                 ),
                 opacity: 0.25, // Default: 0.5

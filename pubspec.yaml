@@ -1,5 +1,5 @@
 name: qvapay
-description: A new Flutter project.
+description: Pasarela de pagos internacional
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -31,7 +31,11 @@ dependencies:
   font_awesome_flutter: ^9.1.0
   flutter_blurhash: ^0.6.0
   simple_shadow: ^0.2.0
-  qr_flutter: ^4.0.0
+  #qr_flutter: ^4.0.0
+  cached_network_image: ^3.0.0
+  introduction_screen: ^2.1.0
+  pretty_qr_code: ^2.0.2
+  local_auth: ^1.1.6
 
 dev_dependencies:
   flutter_test:
@@ -49,9 +53,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  #assets:
+  assets:
   #  - google_fonts/
-  #  - images/a_dot_ham.jpeg
+    - images/qvapay.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

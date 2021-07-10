@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:qr_flutter/qr_flutter.dart';
+import 'package:qvapay/theme.dart';
 //import 'package:qvapay/src/alert.dart';
 import 'package:qvapay/src/snippets/bottom_nav.dart';
-import 'package:qvapay/theme.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:pretty_qr_code/pretty_qr_code.dart';
+import 'package:qr/qr.dart';
 
 class ReceivePage extends StatefulWidget {
   @override
@@ -10,7 +12,7 @@ class ReceivePage extends StatefulWidget {
 }
 
 class _ReceivePageState extends State<ReceivePage> {
-  String _username = "";
+  //String _username = "";
   String _qrData = "PepeConejasacdvito";
   double _amount = 0.00;
 
@@ -36,7 +38,7 @@ class _ReceivePageState extends State<ReceivePage> {
 
               // list View para Scroll Behavior
               child: ListView(
-                padding: EdgeInsets.only(top: 30, left: 20, right: 20),
+                padding: EdgeInsets.only(top: 50, left: 20, right: 20),
                 children: [
                   SizedBox(height: 30.0),
                   Row(
@@ -57,7 +59,8 @@ class _ReceivePageState extends State<ReceivePage> {
                         padding: EdgeInsets.all(0),
                         child: CircleAvatar(
                           backgroundColor: ThemeColors.dark2,
-                          backgroundImage: NetworkImage(avatar),
+                          //backgroundImage: NetworkImage(avatar),
+                          backgroundImage: CachedNetworkImageProvider(avatar),
                         ),
                       ),
                     ],
@@ -108,16 +111,15 @@ class _ReceivePageState extends State<ReceivePage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      QrImage(
-                          data: _qrData,
-                          version: QrVersions.auto,
-                          padding: EdgeInsets.all(10.0),
-                          size: 250.0,
-                          semanticsLabel: _qrData,
-                          embeddedImage: NetworkImage(ThemeColors.logoUrl),
-                          //embeddedImageStyle: QrEmbeddedImageStyle(color: Colors.white),
-                          backgroundColor: ThemeColors.dark2,
-                          foregroundColor: ThemeColors.primaryColor),
+                      PrettyQr(
+                        image: AssetImage('images/qvapay.png'),
+                        typeNumber: 3,
+                        size: 250,
+                        data: _qrData,
+                        elementColor: ThemeColors.primaryColor,
+                        errorCorrectLevel: QrErrorCorrectLevel.M,
+                        roundEdges: true,
+                      ),
                     ],
                   ),
                   SizedBox(height: 20.0),
