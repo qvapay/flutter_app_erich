@@ -11,35 +11,42 @@ Widget latestTransactions(BuildContext context) {
 
       // List of transactions
       transactionItem(
-          context,
-          Icons.fastfood,
-          "Recarga del Exterior",
-          "56897952366",
-          -20.8,
-          "Completed",
-          "Algo acá",
-          "pwiuvbwpieuvbwevpubwev"),
+          context: context,
+          icon: Icons.fastfood,
+          concept: "Recarga del Exterior",
+          subconcept: "56897952366",
+          amount: -20.8,
+          status: "Completed",
+          description: "Algo acá",
+          uuid: "pwiuvbwpieuvbwevpubwev"),
 
       SizedBox(
         height: 7.5,
       ),
 
       transactionItem(
-          context,
-          Icons.fastfood,
-          "Web Giveers",
-          "Diseño e implementación",
-          120.15,
-          "Completed",
-          "Algo acá",
-          "wqevoyqbevpwieuvbwweip"),
+          context: context,
+          icon: Icons.fastfood,
+          concept: "Web Giveers",
+          subconcept: "Diseño e implementación",
+          amount: 120.15,
+          status: "Completed",
+          description: "Algo acá",
+          uuid: "wqevoyqbevpwieuvbwweip"),
 
       SizedBox(
         height: 7.5,
       ),
 
-      transactionItem(context, Icons.fastfood, "RM Envíos", "Combo de comida",
-          -120.15, "Completed", "Algo acá", "wqevoyqbevpwieuvbwweip"),
+      transactionItem(
+          context: context,
+          icon: Icons.fastfood,
+          concept: "RM Envíos",
+          subconcept: "Combo de comida",
+          amount: -120.15,
+          status: "Completed",
+          description: "Algo acá",
+          uuid: "wqevoyqbevpwieuvbwweip"),
 
       SizedBox(
         height: 7.5,

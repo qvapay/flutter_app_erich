@@ -15,6 +15,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       // Whole APP Background Color
       backgroundColor: ThemeColors.dark1,

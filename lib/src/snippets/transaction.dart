@@ -6,15 +6,16 @@ import 'package:qvapay/theme.dart';
 
 // Image of person
 Widget transactionItem(
-    BuildContext context,
+    {BuildContext context,
     IconData icon,
     String concept,
     String subconcept,
     double amount,
     String status,
     String description,
-    String uuid) {
-  
+    String uuid}) {
+
+
   Color amountColor = ThemeColors.receivedMoney;
   String sign = "+ ";
 
@@ -26,11 +27,6 @@ Widget transactionItem(
   return GestureDetector(
     onTap: () {
       print('clic TX $uuid');
-      /*
-      final route =
-          MaterialPageRoute(builder: (context) => TransactionDetails());
-      Navigator.push(context, route);
-      */
       Navigator.pushNamed(context, '/transactions');
     },
     child: Container(
