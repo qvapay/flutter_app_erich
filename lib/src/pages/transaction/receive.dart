@@ -26,7 +26,7 @@ class _ReceivePageState extends State<ReceivePage> {
         backgroundColor: ThemeColors.dark1,
 
         // Bottom Buttons
-        bottomNavigationBar: bottomNav(context),
+        //bottomNavigationBar: bottomNav(context),
 
         // Body Stack
         body: Column(children: [
