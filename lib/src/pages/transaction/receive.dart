@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qvapay/theme.dart';
 //import 'package:qvapay/src/alert.dart';
-import 'package:qvapay/src/snippets/bottom_nav.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:pretty_qr_code/pretty_qr_code.dart';
 import 'package:qr/qr.dart';

@@ -10,24 +10,29 @@ class TransactionsPage extends StatefulWidget {
 }
 
 class _TransactionsPageState extends State<TransactionsPage> {
-  List<int> _transactions = [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16
-  ];
+  // COntrolador del scroll de la lista
+  ScrollController _scrollController = new ScrollController();
+
+  // Date from latest transaction
+  int _latestTransaction = 0;
+
+  // Retrieved transactions
+  List<int> _transactions = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _retrieveMoreTransactions();
+
+    _scrollController.addListener(() {
+      print("SCROLL");
+      if (_scrollController.position.pixels ==
+          _scrollController.position.maxScrollExtent) {
+        print("FINAL");
+        _retrieveMoreTransactions();
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +53,8 @@ class _TransactionsPageState extends State<TransactionsPage> {
 
           Expanded(
             child: ListView(
+              // Link Scroll COntroller to this
+              controller: _scrollController,
               padding: EdgeInsets.only(top: 30, left: 20, right: 20),
               children: [
                 // Transaction Header
@@ -89,5 +96,17 @@ class _TransactionsPageState extends State<TransactionsPage> {
             uuid: "wqevoyqbevpwieuvbwweip");
       },
     );
+  }
+
+  // Get more transactions from user data
+  _retrieveMoreTransactions() {
+    // retrieve here the transactions from this user
+    for (var i = 1; i < 20; i++) {
+      _latestTransaction++;
+      _transactions.add(_latestTransaction);
+
+      //Update Papi
+      setState(() {});
+    }
   }
 }

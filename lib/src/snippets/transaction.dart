@@ -27,7 +27,7 @@ Widget transactionItem(
   return GestureDetector(
     onTap: () {
       print('clic TX $uuid');
-      Navigator.pushNamed(context, '/transactions');
+      Navigator.pushNamed(context, '/transactions');      // Pass el uuid 
     },
     child: Container(
         padding: EdgeInsets.all(6),
