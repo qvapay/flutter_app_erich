@@ -5,6 +5,7 @@ import 'package:qvapay/src/providers/transactions_provider.dart';
 import 'package:qvapay/src/snippets/transaction.dart';
 
 Widget latestTransactions(BuildContext context) {
+  
   final latestTransactions = new TransactionsProvider();
   List<Transaction> _transactions = [];
 

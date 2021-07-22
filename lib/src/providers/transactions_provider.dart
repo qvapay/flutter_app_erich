@@ -28,7 +28,7 @@ class TransactionsProvider {
     // same here bu ony 3
     String _url = "/api/application/transactions";
     String _apiKey = "sdveqrbqerb";
-    String _amount = "3";
+    String _amount = "5";
 
     final url = Uri.https(
         QvapayGlobals.apiUrl, _url, {'token': _apiKey, 'amount': _amount});

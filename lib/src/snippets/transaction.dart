@@ -15,7 +15,6 @@ Widget transactionItem(
     String description,
     String uuid}) {
 
-
   Color amountColor = ThemeColors.receivedMoney;
   String sign = "+ ";
 
@@ -29,6 +28,7 @@ Widget transactionItem(
       print('clic TX $uuid');
       Navigator.pushNamed(context, '/transactions');      // Pass el uuid 
     },
+
     child: Container(
         padding: EdgeInsets.all(6),
         decoration: BoxDecoration(
@@ -80,6 +80,8 @@ Widget transactionItem(
               children: [
                 Text(
                   concept,
+                  maxLines: 1,
+                  overflow: TextOverflow.clip,
                   style: TextStyle(
                     fontSize: 17,
                     fontWeight: FontWeight.bold,
