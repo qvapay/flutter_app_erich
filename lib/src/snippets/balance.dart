@@ -3,6 +3,7 @@ import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:qvapay/theme.dart';
 
 Widget balanceCard(BuildContext context) {
+  
   return Container(
     height: 140,
     decoration: BoxDecoration(

@@ -36,6 +36,9 @@ dependencies:
   introduction_screen: ^2.1.0
   pretty_qr_code: ^2.0.2
   local_auth: ^1.1.6
+  quick_actions: ^0.6.0+3
+  flutter_swiper: ^1.1.6
+  http: ^0.13.3
 
 dev_dependencies:
   flutter_test:

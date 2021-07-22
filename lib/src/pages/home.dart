@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:qvapay/src/snippets/latest_transactions.dart';
-import 'package:qvapay/theme.dart';
 import 'package:qvapay/src/snippets/balance.dart';
+import 'package:qvapay/src/snippets/latest_transactions.dart';
+import 'package:qvapay/src/snippets/swiper_userdata.dart';
+import 'package:qvapay/theme.dart';
 import 'package:qvapay/src/snippets/bottom_nav.dart';
 import 'package:qvapay/src/snippets/topbar.dart';
 import 'package:qvapay/src/pages/services/horizontal_list.dart';
@@ -13,9 +14,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // user Data
+  List userData = [1, 2];
+
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       // Whole APP Background Color
       backgroundColor: ThemeColors.dark1,
@@ -42,8 +45,9 @@ class _HomePageState extends State<HomePage> {
               child: ListView(
                 padding: EdgeInsets.only(top: 30, left: 20, right: 20),
                 children: [
-                  // Balance Card
-                  balanceCard(context),
+                  
+                  //swiperUserData(context),
+                  SwiperUserData(userData: userData),
 
                   // Spacer
                   SizedBox(
