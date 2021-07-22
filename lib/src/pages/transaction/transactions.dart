@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:qvapay/src/models/transactions_model.dart';
@@ -14,15 +13,19 @@ class TransactionsPage extends StatefulWidget {
 }
 
 class _TransactionsPageState extends State<TransactionsPage> {
+  
   // Transactions...
   final transactionsProvider = new TransactionsProvider();
 
   // Controlador del scroll de la lista
   ScrollController _scrollController = new ScrollController();
+
   // Date from latest transaction
   int _latestTransaction = 0;
+
   // Retrieved transactions
   List<Transaction> _transactions = [];
+  
   // Loading data
   bool _isLoading = false;
 
@@ -100,15 +103,14 @@ class _TransactionsPageState extends State<TransactionsPage> {
   }
 
   Widget _latestTransactions() {
+
     return FutureBuilder(
       future: transactionsProvider.getLatestTransactions(),
       //initialData: InitialData,       // Loadded from local DB
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         // snapshot.data
         if (snapshot.hasData) {
-          
           _transactions = snapshot.data;
-
           return ListView.builder(
             shrinkWrap: true,
             physics: ScrollPhysics(),

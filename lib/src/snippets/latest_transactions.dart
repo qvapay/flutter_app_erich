@@ -1,75 +1,70 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:qvapay/src/models/transactions_model.dart';
+import 'package:qvapay/src/providers/transactions_provider.dart';
 import 'package:qvapay/src/snippets/transaction.dart';
 
 Widget latestTransactions(BuildContext context) {
-  return Column(
-    children: [
-      
-      // Transaction Header
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            "Transacciones",
-            style: TextStyle(
-                fontSize: 18, fontWeight: FontWeight.w400, color: Colors.white),
-          ),
-          GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, '/transactions');
-              },
-              child: FaIcon(FontAwesomeIcons.plusCircle, size: 14.0)),
-        ],
-      ),
+  final latestTransactions = new TransactionsProvider();
+  List<Transaction> _transactions = [];
 
-      // Spacer
-      SizedBox(
-        height: 20,
-      ),
-
-      // List of transactions
-      transactionItem(
+  // Muestra las ultimas 3 operaciones
+  List<Widget> _latestTransactions() {
+    return _transactions.map((transaction) {
+      return transactionItem(
           context: context,
-          icon: Icons.fastfood,
-          concept: "Recarga del Exterior",
-          subconcept: "56897952366",
-          amount: -20.8,
-          status: "Completed",
-          description: "Algo acá",
-          uuid: "pwiuvbwpieuvbwevpubwev"),
+          icon: Icons.fastfood, //TODO: Change this for the logo
+          concept: transaction.description,
+          subconcept: transaction.remoteId,
+          amount: double.parse(transaction.amount),
+          status: transaction.status,
+          description: transaction.description,
+          uuid: transaction.uuid);
+    }).toList();
+  }
 
-      SizedBox(
-        height: 7.5,
-      ),
+  return FutureBuilder(
+    future: latestTransactions.getLatestTransactionsHome(),
+    initialData: [],
+    builder: (BuildContext context, AsyncSnapshot snapshot) {
+      if (snapshot.hasData) {
+        _transactions = snapshot.data;
 
-      transactionItem(
-          context: context,
-          icon: Icons.fastfood,
-          concept: "Web Giveers",
-          subconcept: "Diseño e implementación",
-          amount: 120.15,
-          status: "Completed",
-          description: "Algo acá",
-          uuid: "wqevoyqbevpwieuvbwweip"),
+        return Column(
+          children: [
+            // Transaction Header
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Transacciones",
+                  style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.white),
+                ),
+                GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/transactions');
+                    },
+                    child: FaIcon(FontAwesomeIcons.plusCircle, size: 14.0)),
+              ],
+            ),
 
-      SizedBox(
-        height: 7.5,
-      ),
+            // Spacer
+            SizedBox(
+              height: 20,
+            ),
 
-      transactionItem(
-          context: context,
-          icon: Icons.fastfood,
-          concept: "RM Envíos",
-          subconcept: "Combo de comida",
-          amount: -120.15,
-          status: "Completed",
-          description: "Algo acá",
-          uuid: "wqevoyqbevpwieuvbwweip"),
+            Column(
+              children: _latestTransactions(),
+            ),
 
-      SizedBox(
-        height: 7.5,
-      ),
-    ],
+          ],
+        );
+      } else {
+        return Container();
+      }
+    },
   );
 }
