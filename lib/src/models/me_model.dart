@@ -6,6 +6,8 @@ class Me {
   String bio;
   String logo;
   String balance;
+  double totalOut;
+  double totalIn;
   int kyc;
   //List<LatestTransaction> latestTransactions = [];
 
@@ -17,6 +19,8 @@ class Me {
     this.bio,
     this.logo,
     this.balance,
+    this.totalOut,
+    this.totalIn,
     this.kyc,
     //this.latestTransactions,
   });
@@ -29,6 +33,8 @@ class Me {
     bio = json['bio'];
     logo = json['logo'];
     balance = json['balance'];
+    totalOut = double.parse(json['total_out']);
+    totalIn = double.parse(json['total_in']);
     kyc = json['kyc'];
     //latestTransactions = json['latestTransactions'];
   }

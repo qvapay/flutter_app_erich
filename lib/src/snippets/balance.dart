@@ -9,7 +9,10 @@ Widget balanceCard(BuildContext context, Future<Me> me) {
     //initialData: InitialData,
     builder: (BuildContext context, AsyncSnapshot snapshot) {
       if (snapshot.hasData) {
+
         final String _balance = snapshot.data.balance;
+        final String _totalOut = snapshot.data.totalOut.toString();
+        final String _totalIn = snapshot.data.totalIn.toString();
 
         return Container(
           height: 140,
@@ -54,7 +57,7 @@ Widget balanceCard(BuildContext context, Future<Me> me) {
                               Row(
                                 children: [
                                   Text(
-                                    "\$ 170.90",
+                                    _totalOut,
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 15.0,
@@ -87,7 +90,7 @@ Widget balanceCard(BuildContext context, Future<Me> me) {
                                     width: 6,
                                   ),
                                   Text(
-                                    "\$ 450.10",
+                                    _totalIn,
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 15.0,
