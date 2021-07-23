@@ -7,7 +7,7 @@ class Me {
   String logo;
   String balance;
   int kyc;
-  List<LatestTransaction> latestTransactions = [];
+  //List<LatestTransaction> latestTransactions = [];
 
   Me({
     this.uuid,
@@ -18,7 +18,7 @@ class Me {
     this.logo,
     this.balance,
     this.kyc,
-    this.latestTransactions,
+    //this.latestTransactions,
   });
 
   Me.fromJsonMap(Map<String, dynamic> json) {
@@ -30,7 +30,7 @@ class Me {
     logo = json['logo'];
     balance = json['balance'];
     kyc = json['kyc'];
-    latestTransactions = json['latestTransactions'];
+    //latestTransactions = json['latestTransactions'];
   }
 }
 
@@ -46,10 +46,10 @@ class LatestTransaction {
   int signed;
   String createdAt;
   String updatedAt;
-  PaidBy paidBy;
-  AppOwner appOwner;
+  int paidBy;
+  int appOwner;
   Me owner;
-  Wallet wallet;
+  String wallet;
 
   LatestTransaction({
     this.uuid,
@@ -71,71 +71,19 @@ class LatestTransaction {
 
   LatestTransaction.fromJsonMap(Map<String, dynamic> json) {
     uuid = json['uuid'];
-    userId = json['userId'];
-    appId = json['appId'];
+    userId = json['user_id'];
+    appId = json['app_id'];
     amount = json['amount'];
     description = json['description'];
-    remoteId = json['remoteId'];
+    remoteId = json['remote_id'];
     status = json['status'];
-    paidByUserId = json['paidByUserId'];
+    paidByUserId = json['paid_by_user_id'];
     signed = json['signed'];
-    createdAt = json['createdAt'];
-    updatedAt = json['updatedAt'];
-    paidBy = json['paidBy'];
-    appOwner = json['appOwner'];
+    createdAt = json['created_at'];
+    updatedAt = json['updated_at'];
+    paidBy = json['paid_by'];
+    appOwner = json['app_owner'];
     owner = json['owner'];
     wallet = json['wallet'];
   }
-}
-
-class AppOwner {
-  String logo;
-  String url;
-  String name;
-
-  AppOwner({
-    this.logo,
-    this.url,
-    this.name,
-  });
-}
-
-class PaidBy {
-  String username;
-  String name;
-  String logo;
-
-  PaidBy({
-    this.username,
-    this.name,
-    this.logo,
-  });
-}
-
-class Wallet {
-  int id;
-  int transactionId;
-  String invoiceId;
-  String walletType;
-  String wallet;
-  String value;
-  String received;
-  String txid;
-  String status;
-  String createdAt;
-  String updatedAt;
-
-  Wallet({
-    this.id,
-    this.transactionId,
-    this.invoiceId,
-    this.walletType,
-    this.wallet,
-    this.value,
-    this.received,
-    this.txid,
-    this.status,
-    this.createdAt,
-    this.updatedAt,
-  });
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:qvapay/src/models/me_model.dart';
+import 'package:qvapay/src/providers/me_provider.dart';
 import 'package:qvapay/theme.dart';
 import 'package:qvapay/src/snippets/footer.dart';
 import 'package:qvapay/src/snippets/latest_transactions.dart';
@@ -15,7 +17,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   // user Data
-  List userData = [1, 2];
+  Future<Me> me = new MeProvider().me();
 
   @override
   Widget build(BuildContext context) {
@@ -30,10 +32,7 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: [
           // Top Bar
-          topbar(context,
-              name: "Erich",
-              avatar:
-                  "https://qvapay.com/storage/profiles/xGnoyrlZMy10Ta5hCQGvEtj6aqJK3Fa1rueU1lPv.jpg"),
+          topbar(context, me: me),
 
           // Body
           Expanded(
@@ -45,14 +44,12 @@ class _HomePageState extends State<HomePage> {
               child: ListView(
                 padding: EdgeInsets.only(top: 30, left: 20, right: 20),
                 children: [
-                  
+                  // User Balance and other data wiper
                   //swiperUserData(context),
-                  SwiperUserData(userData: userData),
+                  SwiperUserData(me: me),
 
                   // Spacer
-                  SizedBox(
-                    height: 30,
-                  ),
+                  SizedBox(height: 30),
 
                   // Services Header
                   Row(
@@ -75,25 +72,19 @@ class _HomePageState extends State<HomePage> {
                   ),
 
                   // Spacer
-                  SizedBox(
-                    height: 5,
-                  ),
+                  SizedBox(height: 5),
 
                   // Services List
                   servicesList(context),
 
                   // Spacer
-                  SizedBox(
-                    height: 15,
-                  ),
+                  SizedBox(height: 15),
 
                   // Latest 3 transactions
                   latestTransactions(context),
 
                   // Spacer
-                  SizedBox(
-                    height: 15,
-                  ),
+                  SizedBox(height: 15),
 
                   footer(context),
                 ],

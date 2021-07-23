@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:qvapay/src/models/me_model.dart';
 import 'package:qvapay/theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-Widget topbar(BuildContext context, {String name = "", String avatar = ""}) {
+Widget topbar(BuildContext context, {Future<Me> me}) {
   return Container(
     height: 100,
     color: ThemeColors.dark1,
@@ -24,7 +25,7 @@ Widget topbar(BuildContext context, {String name = "", String avatar = ""}) {
                     print("Pressed");
                   }),
               // Profile details
-              profileData(context, name: name, avatar: avatar),
+              profileData(context, me: me),
             ],
           ),
         ],
@@ -34,53 +35,71 @@ Widget topbar(BuildContext context, {String name = "", String avatar = ""}) {
 }
 
 // Hi, Name and Profile picture
-Widget profileData(BuildContext context,
-    {String name = "", String avatar = ""}) {
+Widget profileData(BuildContext context, {Future<Me> me}) {
+  
+  return FutureBuilder<Me>(
+    future: me,
+    //initialData: [],
+    builder: (BuildContext context, AsyncSnapshot snapshot) {
 
-  return GestureDetector(
-    onTap: () {
-      Navigator.pushNamed(context, '/settings');
-    },
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        RichText(
-          text: TextSpan(
-              text: "Hola, ",
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.white38,
-                fontWeight: FontWeight.w400,
-              ),
-              children: [
-                TextSpan(
-                    text: name,
+      if (snapshot.hasData) {
+        
+        Me me = snapshot.data;
+
+        return GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, '/settings');
+          },
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              RichText(
+                text: TextSpan(
+                    text: "Hola, ",
                     style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ))
-              ]),
-        ),
-        SizedBox(width: 10),
-        Container(
-          width: 36.0,
-          height: 36.0,
-          decoration: BoxDecoration(
-            color: ThemeColors.prettyWhite,
-            border: Border.all(
-              width: 1.6,
-              color: Colors.white,
-            ),
-            borderRadius: BorderRadius.circular(18.0),
+                      fontSize: 16,
+                      color: Colors.white38,
+                      fontWeight: FontWeight.w400,
+                    ),
+                    children: [
+                      TextSpan(
+                          text: me.name,
+                          //text: "Erich",
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ))
+                    ]),
+              ),
+              SizedBox(width: 10),
+              Container(
+                width: 36.0,
+                height: 36.0,
+                decoration: BoxDecoration(
+                  color: ThemeColors.prettyWhite,
+                  border: Border.all(
+                    width: 1.6,
+                    color: Colors.white,
+                  ),
+                  borderRadius: BorderRadius.circular(18.0),
+                ),
+                padding: EdgeInsets.all(0),
+                child: CircleAvatar(
+                  backgroundColor: ThemeColors.dark2,
+                  backgroundImage: CachedNetworkImageProvider(me.logo, scale: 1.0),
+                  //backgroundImage: CachedNetworkImageProvider("https://qvapay.com/storage/profiles/xGnoyrlZMy10Ta5hCQGvEtj6aqJK3Fa1rueU1lPv.jpg", scale: 1.0),
+                ),
+              ),
+            ],
           ),
-          padding: EdgeInsets.all(0),
-          child: CircleAvatar(
-            backgroundColor: ThemeColors.dark2,
-            backgroundImage: CachedNetworkImageProvider(avatar),
-          ),
-        ),
-      ],
-    ),
+        );
+      } else {
+        return Container(
+          height: 10,
+          width: 10,
+        );
+      }
+    },
   );
 }

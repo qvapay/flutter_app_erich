@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class TransactionsProvider {
+
   String _url = "/api/application/transactions";
   String _apiKey = "sdveqrbqerb";
   String _amount = "30";
@@ -11,6 +12,7 @@ class TransactionsProvider {
 
   // Get all recent transactions (20)
   Future<List<Transaction>> getLatestTransactions() async {
+    
     final url = Uri.https(QvapayGlobals.apiUrl, _url,
         {'token': _apiKey, 'amount': _amount, 'page': _page});
 
