@@ -10,6 +10,7 @@ Widget latestTransactions(BuildContext context) {
 
   // WWidget con las ultimas 3 operaciones
   List<Widget> _latestTransactions() {
+    
     return _transactions.map((transaction) {
       return transactionItem(
           context: context,

@@ -9,7 +9,7 @@ class Me {
   double totalOut;
   double totalIn;
   int kyc;
-  //List<LatestTransaction> latestTransactions = [];
+  List<LatestTransaction> latestTransactions = [];
 
   Me({
     this.uuid,
@@ -22,7 +22,7 @@ class Me {
     this.totalOut,
     this.totalIn,
     this.kyc,
-    //this.latestTransactions,
+    this.latestTransactions,
   });
 
   Me.fromJsonMap(Map<String, dynamic> json) {
@@ -36,10 +36,30 @@ class Me {
     totalOut = double.parse(json['total_out']);
     totalIn = double.parse(json['total_in']);
     kyc = json['kyc'];
-    //latestTransactions = json['latestTransactions'];
+
+    // Iterate over Latest Transactions
+    LatestTransactions latest = LatestTransactions.fromJsonList(json['latestTransactions']);
+    latestTransactions = latest.latestTransactions;
   }
 }
 
+// latestTransactions List
+class LatestTransactions {
+  List<LatestTransaction> latestTransactions = [];
+
+  LatestTransactions();
+
+  LatestTransactions.fromJsonList(List<dynamic> jsonList) {
+    if (jsonList == null) return;
+
+    for (var item in jsonList) {
+      final transaction = new LatestTransaction.fromJsonMap(item);
+      latestTransactions.add(transaction);
+    }
+  }
+}
+
+// LatestTransaction Object
 class LatestTransaction {
   String uuid;
   int userId;
@@ -52,10 +72,10 @@ class LatestTransaction {
   int signed;
   String createdAt;
   String updatedAt;
-  int paidBy;
-  int appOwner;
-  Me owner;
-  String wallet;
+  //String paidBy;
+  //int appOwner;
+  //Me owner;
+  //String wallet;
 
   LatestTransaction({
     this.uuid,
@@ -69,10 +89,10 @@ class LatestTransaction {
     this.signed,
     this.createdAt,
     this.updatedAt,
-    this.paidBy,
-    this.appOwner,
-    this.owner,
-    this.wallet,
+    //this.paidBy,
+    //this.appOwner,
+    //this.owner,
+    //this.wallet,
   });
 
   LatestTransaction.fromJsonMap(Map<String, dynamic> json) {
@@ -87,9 +107,9 @@ class LatestTransaction {
     signed = json['signed'];
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];
-    paidBy = json['paid_by'];
-    appOwner = json['app_owner'];
-    owner = json['owner'];
-    wallet = json['wallet'];
+    //paidBy = json['paid_by'];
+    //appOwner = json['app_owner'];
+    //owner = json['owner'];
+    //wallet = json['wallet'];
   }
 }
