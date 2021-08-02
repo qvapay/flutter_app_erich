@@ -45,6 +45,7 @@ class Me {
 
 // latestTransactions List
 class LatestTransactions {
+  
   List<LatestTransaction> latestTransactions = [];
 
   LatestTransactions();
@@ -68,8 +69,9 @@ class LatestTransaction {
   String description;
   String remoteId;
   String status;
+  String logo;
   int paidByUserId;
-  int signed;
+  //int signed;
   String createdAt;
   String updatedAt;
   //String paidBy;
@@ -85,8 +87,9 @@ class LatestTransaction {
     this.description,
     this.remoteId,
     this.status,
+    this.logo,
     this.paidByUserId,
-    this.signed,
+    //this.signed,
     this.createdAt,
     this.updatedAt,
     //this.paidBy,
@@ -103,8 +106,9 @@ class LatestTransaction {
     description = json['description'];
     remoteId = json['remote_id'];
     status = json['status'];
+    logo = json['logo'];
     paidByUserId = json['paid_by_user_id'];
-    signed = json['signed'];
+    //signed = json['signed'];
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];
     //paidBy = json['paid_by'];

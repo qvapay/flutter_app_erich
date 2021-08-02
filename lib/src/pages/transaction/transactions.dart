@@ -2,9 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:qvapay/src/models/me_model.dart';
-import 'package:qvapay/src/models/transactions_model.dart';
 import 'package:qvapay/src/providers/me_provider.dart';
-import 'package:qvapay/src/providers/transactions_provider.dart';
 import 'package:qvapay/src/snippets/topbar.dart';
 import 'package:qvapay/src/snippets/transaction.dart';
 import 'package:qvapay/theme.dart';
@@ -15,8 +13,6 @@ class TransactionsPage extends StatefulWidget {
 }
 
 class _TransactionsPageState extends State<TransactionsPage> {
-  // Transactions...
-  final transactionsProvider = new TransactionsProvider();
 
   // Controlador del scroll de la lista
   ScrollController _scrollController = new ScrollController();
@@ -25,13 +21,14 @@ class _TransactionsPageState extends State<TransactionsPage> {
   int _latestTransaction = 0;
 
   // Retrieved transactions
-  List<Transaction> _transactions = [];
+  List<LatestTransaction> _transactions = [];
 
   // Loading data
   bool _isLoading = false;
 
-// Me Data
+  // Me Data
   Future<Me> me = new MeProvider().me();
+  Future<LatestTransactions> latestTransactions = new MeProvider().getLatestTransactions();
 
   @override
   void initState() {
@@ -104,12 +101,12 @@ class _TransactionsPageState extends State<TransactionsPage> {
 
   Widget _latestTransactions() {
     return FutureBuilder(
-      future: transactionsProvider.getLatestTransactions(),
+      future: latestTransactions,
       //initialData: InitialData,       // Loadded from local DB
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         // snapshot.data
         if (snapshot.hasData) {
-          _transactions = snapshot.data;
+          _transactions = snapshot.data.latestTransactions;
           return ListView.builder(
             shrinkWrap: true,
             physics: ScrollPhysics(),
@@ -117,7 +114,7 @@ class _TransactionsPageState extends State<TransactionsPage> {
             itemBuilder: (BuildContext context, int index) {
               return transactionItem(
                   context: context,
-                  icon: Icons.fastfood, //TODO: Change this for the logo
+                  logo: _transactions[index].logo, //TODO: Change this for the logo
                   concept: _transactions[index].description,
                   subconcept: _transactions[index].remoteId,
                   amount: double.parse(_transactions[index].amount),

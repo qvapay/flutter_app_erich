@@ -7,7 +7,7 @@ import 'package:qvapay/theme.dart';
 // Image of person
 Widget transactionItem(
     {BuildContext context,
-    IconData icon,
+    String logo,
     String concept,
     String subconcept,
     double amount,
@@ -59,12 +59,8 @@ Widget transactionItem(
                 padding: EdgeInsets.all(.6),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(6.0),
-                  child: Image.network(
-                    "https://qvapay.com/storage/profiles/xGnoyrlZMy10Ta5hCQGvEtj6aqJK3Fa1rueU1lPv.jpg",
-                    height: 50.0,
-                    width: 50.0,
-                    fit: BoxFit.cover,
-                  ),
+                  //child: Image.network("https://qvapay.com/storage/profiles/xGnoyrlZMy10Ta5hCQGvEtj6aqJK3Fa1rueU1lPv.jpg", height: 50.0, width: 50.0, fit: BoxFit.cover),
+                  child: Image.network("https://qvapay.com/storage/" + logo, height: 50.0, width: 50.0, fit: BoxFit.cover),
                 ),
               ),
             ],

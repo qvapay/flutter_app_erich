@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(height: 15),
 
                   // Latest 3 transactions
-                  //latestTransactions(context),
+                  latestTransactions(context, me: me),
 
                   // Spacer
                   SizedBox(height: 15),

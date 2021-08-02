@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:qvapay/src/providers/transactions_provider.dart';
+import 'package:qvapay/src/models/me_model.dart';
 import 'package:qvapay/src/snippets/transaction.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-Widget latestTransactions(BuildContext context) {
+Widget latestTransactions(BuildContext context, {Future<Me> me}) {
   
-  final latestTransactions = new TransactionsProvider();
+  //final latestTransactions = new TransactionsProvider();
   List<dynamic> _transactions = [];
 
   // WWidget con las ultimas 3 operaciones
@@ -14,7 +14,7 @@ Widget latestTransactions(BuildContext context) {
     return _transactions.map((transaction) {
       return transactionItem(
           context: context,
-          icon: Icons.fastfood, //TODO: Change this for the logo
+          logo: transaction.logo,
           concept: transaction.description,
           subconcept: transaction.remoteId,
           amount: double.parse(transaction.amount),
@@ -25,12 +25,15 @@ Widget latestTransactions(BuildContext context) {
   }
 
   return FutureBuilder(
-    future: latestTransactions.getLatestTransactionsHome(),
+    
+    //future: latestTransactions.getLatestTransactionsHome(),
+    future: me,
     initialData: [],
     builder: (BuildContext context, AsyncSnapshot snapshot) {
+
       if (snapshot.hasData) {
         
-        _transactions = snapshot.data;
+        _transactions = snapshot.data.latestTransactions;
 
         return Column(
           children: [
