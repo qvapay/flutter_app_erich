@@ -10,7 +10,7 @@ class MeProvider {
   // Transform it into Me Model
   // Return Me Model
 
-  String _url = "/api/application/me";
+  String _url = "/api/app/me";
   String _apiKey = "sdveqrbqerb";
 
   // Get a Future with the Me class

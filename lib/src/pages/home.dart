@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       // Whole APP Background Color
       backgroundColor: ThemeColors.dark1,
 
@@ -82,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(height: 15),
 
                   // Latest 3 transactions
-                  latestTransactions(context),
+                  //latestTransactions(context),
 
                   // Spacer
                   SizedBox(height: 15),

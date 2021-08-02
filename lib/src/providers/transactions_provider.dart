@@ -5,7 +5,7 @@ import 'dart:convert';
 
 class TransactionsProvider {
 
-  String _url = "/api/application/transactions";
+  String _url = "/api/app/transactions";
   String _apiKey = "sdveqrbqerb";
   String _amount = "30";
   String _page = "1";
