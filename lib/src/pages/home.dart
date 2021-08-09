@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qvapay/src/models/me_model.dart';
 import 'package:qvapay/src/providers/me_provider.dart';
+import 'package:qvapay/src/snippets/stream_transactions.dart';
 import 'package:qvapay/theme.dart';
 import 'package:qvapay/src/snippets/footer.dart';
 import 'package:qvapay/src/snippets/latest_transactions.dart';
@@ -84,6 +85,12 @@ class _HomePageState extends State<HomePage> {
 
                   // Latest 3 transactions
                   latestTransactions(context, me: me),
+
+                  // Spacer
+                  SizedBox(height: 15),
+
+                  // Latest 3 transactions as Stream
+                  streamTransactions(context, me: me),
 
                   // Spacer
                   SizedBox(height: 15),
